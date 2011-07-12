@@ -43,6 +43,8 @@ function jqueryTwitter_activate()
 }
 
 function jqueryTwitter_init() {
+	$plugin_url = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__));
+	
 	if (is_admin() ){ 
 		// action taking place in the administration area
 		// Register settings on administration
@@ -54,9 +56,9 @@ function jqueryTwitter_init() {
 		wp_deregister_script( 'jquery' );
         wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js');
         wp_enqueue_script( 'jquery' );
-		wp_enqueue_script('jquery-twitter', WP_PLUGIN_URL . '/wp-jquery-twitter/assets/js/jquery.twitter.js', array('jquery'));
+		wp_enqueue_script('jquery-twitter', $plugin_url . 'assets/js/jquery.twitter.js', array('jquery'));
 		// enqueue style sheet
-    	wp_enqueue_style('jquery-twitter-style', WP_PLUGIN_URL . '/wp-jquery-twitter/assets/css/jquery.twitter.css');
+    	wp_enqueue_style('jquery-twitter-style', $plugin_url . 'assets/css/jquery.twitter.css');
 	}
 }
 
