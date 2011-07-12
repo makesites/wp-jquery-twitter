@@ -207,12 +207,13 @@ class TwitterWidget extends WP_Widget {
 
     /** @see WP_Widget::form */
     function form($instance) {
-        $username = esc_attr($instance['jquery-twitter-userName']);
+        //$username = esc_attr($instance['jquery-twitter-userName']);
         ?>
-         <p>
+        <p>Please find the "jQuery Twitter" page in the Settings sidebar to update your options.</p>
+         <!--p>
           <label for="<?php echo $this->get_field_id('jquery-twitter-userName'); ?>"><?php _e('Username:'); ?></label> 
           <input class="widefat" id="<?php echo $this->get_field_id('jquery-twitter-userName'); ?>" name="<?php echo $this->get_field_name('jquery-twitter-userName'); ?>" type="text" value="<?php echo $username; ?>" />
-        </p>
+        </p -->
         <?php 
     }
 
