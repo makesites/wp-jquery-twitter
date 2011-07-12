@@ -97,10 +97,14 @@ function generateJS( $data ){
 	if( $data['slideDuration'] != "0"){
 		$output .=	"\t\t\t" . 'slideIn: true,' . "\n";
 		$output .=	"\t\t\t" . 'slideDuration: '. $data['slideDuration'] .',' . "\n";
+	} else {
+		$output .=	"\t\t\t" . 'slideIn: false,' . "\n";
 	}
 	if( $data['headingText'] != ""){
 		$output .=	"\t\t\t" . 'showHeading: true,' . "\n";
 		$output .=	"\t\t\t" . 'headingText: "'. $data['headingText'] .'",' . "\n";
+	} else {
+		$output .=	"\t\t\t" . 'showHeading: false,' . "\n";
 	}
 	
 	$output .=	"\t\t\t" . 'showProfileLink: '. $data['showProfileLink'] .',' . "\n";
